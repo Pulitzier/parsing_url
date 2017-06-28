@@ -5,15 +5,18 @@ require 'csv'
 def parse_page(uri, page)
 	url = Curl.get(uri)
 	url.perform
+
+	# File.open(page, 'w') do |f|
+	# 	f.puts url.body_str
+	# end
+
+
 	doc = Nokogiri.parse(url.body_str)
-	out = doc.xpath("//html//meta/@content", "//html/*/title", "//html/*/a/@href").to_a
+	out = doc.xpath("//body//section[@id='center_column']//a[@class='product-name']/@href").to_a
 
 	CSV.open(page, 'w') do |row|
-		row << [out[0], out[1], out[2]]
+		row << [out.join("\n")]
 	end
-	# open(page, "w+") { |f|
-	# 	f.puts out.join(', ')
-	# }
 end
 
-parse_page("http://google.com", "page.csv")
+parse_page("https://www.petsonic.com/snacks-huesos-para-perros/?controllerUri=category&id_category=896&n=221", "s.csv")
