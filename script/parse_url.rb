@@ -13,23 +13,16 @@ def parse_page(uri, page)
 	doc = Nokogiri.parse(url.body_str)
 	out = doc.xpath("//body//section[@id='center_column']//a[@class='product-name']/@href").to_s
 
-	# y = out.to_s
-
 	CSV.open("links.csv", 'w') do |row|
 		out.each_line('html'){|s| 
 			row << [s]
 		}
 	end
 
-	# CSV.foreach("links.csv", 'r') do |l|
-	# 	product = Curl.get(l)
-	# 	product.perform
-	# 	puts ok
-
-	# File.open(page, 'a+') do |f|
-	# 	f.
-	# end
-
+	CSV.foreach("links.csv", 'r') do |l|
+		product = Curl.get(l)
+		product.perform
+		puts ok
 	# url = Curl.get('https://www.petsonic.com/hobbit-alf-estrellas-tiernas-salmon-queso-para-perros.html#/unidades-1_unidad_')
 	# url.perform
 
@@ -47,7 +40,7 @@ def parse_page(uri, page)
 		# 	end
 		# end
 
-	# end
+	end
 
 end
 
