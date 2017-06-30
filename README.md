@@ -6,10 +6,15 @@ For debugging - Chrome devtools.
 
 #### Future scope:
 
-1) Gemfile
+1) Gemfile (done)
+	Gemfile.lock
 2) Rakefile
 3) Custom commands
 4) Common modules for debugging, retrieving multiple urls, retrieving neaded info about element at once
 
 5) regexp
 6) try to change main URL and implement some working solution
+
+Libraries: 
+- pry
+- byebug
