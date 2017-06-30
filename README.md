@@ -9,7 +9,7 @@ For debugging - Chrome devtools.
 1) Gemfile
 2) Rakefile
 3) Custome commands
-4) Common modules for debugging, retrieving multiple urls, retrieving neaded info aboud element at once
+4) Common modules for debugging, retrieving multiple urls, retrieving neaded info about element at once
 
 5) regexp
 6) try to change main URL and implement some working solution
