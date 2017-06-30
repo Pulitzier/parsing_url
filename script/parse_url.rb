@@ -3,28 +3,23 @@ require 'nokogiri'
 require 'csv'
 
 def parse_page(uri, page)
+	# Get the main page
 	url = Curl.get(uri)
 	url.perform
 
-	# File.open(page, 'w') do |f|
-	# 	f.puts url.body_str
-	# end
-
 	doc = Nokogiri.parse(url.body_str)
 	out = doc.xpath("//body//section[@id='center_column']//a[@class='product-name']/@href").to_s
-
+	# Find neaded links to products and place them in one file
 	CSV.open("links.csv", 'w') do |row|
 		out.each_line('html'){|s| 
 			row << [s]
 		}
 	end
-
-	CSV.foreach("links.csv", 'r') do |l|
-		product = Curl.get(l)
+	# Loop through each link and get information for product
+	CSV.foreach("links.csv", 'r+') do |l|
+		 # When call each row it is returned in array, like [".....row....", so need to fetch values]
+		product = Curl.get(l.fetch(0))
 		product.perform
-		puts ok
-	# url = Curl.get('https://www.petsonic.com/hobbit-alf-estrellas-tiernas-salmon-queso-para-perros.html#/unidades-1_unidad_')
-	# url.perform
 
 		# doc = Nokogiri.parse(product.body_str)
 		# product_w = doc.xpath("//body//section[@id='center_column']//span[@class='attribute_name']/text()")
