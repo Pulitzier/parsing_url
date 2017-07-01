@@ -7,7 +7,8 @@ For debugging - Chrome devtools.
 #### Future scope:
 
 1) Gemfile (done)
-	Gemfile.lock
+- Gemfile.lock
+- gemspec(done)
 2) Rakefile
 3) Custom commands
 4) Common modules for debugging, retrieving multiple urls, retrieving neaded info about element at once
