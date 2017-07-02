@@ -11,7 +11,7 @@ For debugging - Chrome devtools.
 1) Gemfile (list gem & their versions)
 - Gemfile.lock (precise gem versions by Bundler)
 - gemspec(specifies metainfo of project when it is a gem to another project)
-2) Rakefile (comands to rake)
+2) Rakefile (commands to rake)
 3) Custom commands (in irb - so/so, rakefile - maybe)
 4) Common modules for debugging, retrieving multiple urls, retrieving neaded info about element at once
 
@@ -21,7 +21,7 @@ For debugging - Chrome devtools.
 
 Libraries: 
 - pry (alternative to irb)
-- byebug (for debugging; pry-byebug adds some comands to pry)
+- byebug (for debugging; pry-byebug adds some commands to pry)
 
 Frameworks:
 - Rails
