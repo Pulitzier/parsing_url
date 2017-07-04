@@ -2,7 +2,7 @@
 
 This is my testing task as a junior for parsing given url and retrieving information about elements on the page.
 
-In this task i`m using CURB for opening the page, NOKOGIRI - to parse this page and CSV module for writing results into a file. For retrieving information about DOM elements i use Xpath(regexp could be used for this, nontheless this is a future task). Files "Links.csv" and "Output_info.csv" is used.
+In this task i`m using CURB for opening the page, NOKOGIRI - to parse this page and CSV module for writing results into a file. For retrieving information about DOM elements i use Xpath(regexp could be used for this, nontheless this is a future task). Files "Links.csv" and "Output_info.csv" are shown as an example.
 
 For debugging - Chrome devtools.
 
